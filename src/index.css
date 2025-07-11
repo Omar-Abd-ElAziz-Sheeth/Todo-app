@@ -1,0 +1,27 @@
+@import "tailwindcss";
+* {
+  font-family: "Roboto", "Courier New", Courier, monospace;
+}
+
+body {
+  background-image: url("./assets/bg-1.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+h1 {
+  overflow: hidden;
+}
+
+.welcome-title {
+  animation: ticker 10s linear infinite forwards;
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
