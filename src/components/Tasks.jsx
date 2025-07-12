@@ -15,7 +15,7 @@ const Tasks = ({ tasks, removeHandler, toggle }) => {
           />
         ))}
 
-      {tasks.length <= 0 && (
+      {tasks && tasks.length <= 0 && (
         <p className="text-red-600 text-center font-bold mt-12">
           Your To Do List Is Empty !
         </p>
