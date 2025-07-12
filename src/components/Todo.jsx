@@ -10,7 +10,7 @@ import Tasks from "./Tasks";
 //   { id: crypto.randomUUID(), text: "node", isComplete: false },
 // ];
 
-const lists = localStorage.getItem("listOfTasks");
+const lists = localStorage.getItem("listOfTasks") || [];
 const Todo = () => {
   const [tasks, setTasks] = useState(JSON.parse(lists));
   const addTaskHandler = (newTask) => {
