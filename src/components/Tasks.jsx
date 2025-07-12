@@ -1,6 +1,8 @@
 import Task from "./Task";
 
-const Tasks = ({ tasks, removeHandler, toggle }) => {
+const Tasks = ({ tasks = [], removeHandler, toggle }) => {
+  console.log(tasks);
+
   return (
     <ul>
       {tasks &&
