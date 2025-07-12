@@ -12,7 +12,16 @@ import Tasks from "./Tasks";
 
 const lists = localStorage.getItem("listOfTasks");
 const Todo = () => {
-  const [tasks, setTasks] = useState(JSON.parse(lists) || "[]");
+  const [tasks, setTasks] = useState(() => {
+    try {
+      const stored = localStorage.getItem("listOfTasks");
+      const parsed = JSON.parse(stored);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (e) {
+      return [];
+    }
+  });
+
   const addTaskHandler = (newTask) => {
     setTasks([...tasks, newTask]);
   };
